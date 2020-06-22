@@ -1,40 +1,35 @@
 
 ## Installation
 
-- All the `code` required to get started
-
 ### 1. Clone
 
-- Clone this repo to your local machine using `git@github.com:sslnyx/irix-template.git`
+- Clone this repo to your local machine using `git clone git@github.com:sslnyx/irix-template.git projectName`
+- Change "projectName" with your desired project name.
 
-### 2. cd into your project
+### 2. Install Composer Dependencies & NPM Dependencies
 
-- If you want more syntax highlighting, format your code like this:
+- `composer install`
 
-> update and install this package first
+- `npm install`
 
-```shell
-$ brew update
-$ brew install fvcproductions
-```
+### 3. Create a copy of your .env file
 
-> now install npm and bower packages
+- `cp .env.example .env`
 
-```shell
-$ npm install
-$ bower install
-```
+### 4. Generate an app encryption key
 
-- For all the possible languages that support syntax highlithing on GitHub (which is basically all of them), refer <a href="https://github.com/github/linguist/blob/master/lib/linguist/languages.yml" target="_blank">here</a>.
+- `php artisan key:generate`
 
----
 
-## Features
-## Usage (Optional)
-## Documentation (Optional)
-## Tests (Optional)
+### 5. Create an empty database for our application
 
-- Going into more detail on code and technologies used
-- I utilized this nifty <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">Markdown Cheatsheet</a> for this sample `README`.
+- `php artisan migrate`
 
----
+
+### 6. [Optional]: Seed the database
+
+If your repository has a seeding file setup, then now is the time to run the seed, which fills your database with starter or dummy data. If the repo doesn’t mention the existence of a seeder file, then skip this step.
+
+After the migrations are complete and you have the database structure required, then you can seed the database (which means add dummy data to it).
+
+- `php artisan db:seed`
