@@ -11,16 +11,18 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 
 Route::get('/', function () {
     return view('pages.home');
 })->name("home");
 
-$pages = array('thank-you','register');
-Route::get('/{page}',function($page) {
-    return   view("pages.".$page);
-})->where('page',implode('|',$pages));
+$pages = array('thank-you', 'register');
+foreach ($pages as $page) {
+    Route::get($page, function () use ($page) {
+        return view("pages.".$page);
+    })->name($page);
+}
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

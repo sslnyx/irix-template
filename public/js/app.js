@@ -19287,41 +19287,22 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // import
 
 var MY_SITE = {
   // you have one namespace-object where you hold all your stuff
-  pages: {
-    home: {
-      // inside you have smaller chunks, for specific pages or widgets
-      // this one is for main page
-      _init: function _init() {
-        __webpack_require__(/*! ./pages/home */ "./resources/js/pages/home.js");
-      }
-    },
-    // but there are other pages
-    register: {}
+  components: ["nav"],
+  init_components: function init_components(el) {
+    __webpack_require__("./resources/js/components sync recursive ^\\.\\/.*$")("./".concat(el));
   },
-  components: {
-    // or widgets
-    nav: {
-      _init: function _init() {
-        __webpack_require__(/*! ./components/nav */ "./resources/js/components/nav.js");
-      }
-    },
-    // and maybe you want to put common functions into dedicated block
-    global_utilities: {} // and of course - the loader
-
-  },
-  start_page: function start_page(el) {
-    console.log(this.pages[el]);
+  init: function init(el) {
+    __webpack_require__("./resources/js/pages sync recursive ^\\.\\/.*$")("./".concat(el));
   }
 }; // document.on('ready', MY_SITE.start); // here we assume some random js framework
 
 (function () {
   // your page initialization code here
   // the DOM will be available here
-  MY_SITE.start_page(page);
-  Object.keys(MY_SITE.components).forEach(function (el) {
-    console.log(el); // MY_SITE.start(page);
-  }); //   MY_SITE.start(page);
-  //   MY_SITE.nav;
+  MY_SITE.components.forEach(function (el) {
+    MY_SITE.init_components(el);
+  });
+  MY_SITE.init(page);
 })();
 
 /***/ }),
@@ -19358,6 +19339,40 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/js/components sync recursive ^\\.\\/.*$":
+/*!***********************************************!*\
+  !*** ./resources/js/components sync ^\.\/.*$ ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./nav": "./resources/js/components/nav.js",
+	"./nav.js": "./resources/js/components/nav.js"
+};
+
+
+function webpackContext(req) {
+	var id = webpackContextResolve(req);
+	return __webpack_require__(id);
+}
+function webpackContextResolve(req) {
+	if(!__webpack_require__.o(map, req)) {
+		var e = new Error("Cannot find module '" + req + "'");
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	}
+	return map[req];
+}
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = "./resources/js/components sync recursive ^\\.\\/.*$";
+
+/***/ }),
+
 /***/ "./resources/js/components/nav.js":
 /*!****************************************!*\
   !*** ./resources/js/components/nav.js ***!
@@ -19365,7 +19380,43 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-console.log("navjs");
+console.log("navjs injected");
+
+/***/ }),
+
+/***/ "./resources/js/pages sync recursive ^\\.\\/.*$":
+/*!******************************************!*\
+  !*** ./resources/js/pages sync ^\.\/.*$ ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./home": "./resources/js/pages/home.js",
+	"./home.js": "./resources/js/pages/home.js",
+	"./register": "./resources/js/pages/register.js",
+	"./register.js": "./resources/js/pages/register.js"
+};
+
+
+function webpackContext(req) {
+	var id = webpackContextResolve(req);
+	return __webpack_require__(id);
+}
+function webpackContextResolve(req) {
+	if(!__webpack_require__.o(map, req)) {
+		var e = new Error("Cannot find module '" + req + "'");
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	}
+	return map[req];
+}
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = "./resources/js/pages sync recursive ^\\.\\/.*$";
 
 /***/ }),
 
@@ -19377,6 +19428,17 @@ console.log("navjs");
 /***/ (function(module, exports) {
 
 console.log('home injected');
+
+/***/ }),
+
+/***/ "./resources/js/pages/register.js":
+/*!****************************************!*\
+  !*** ./resources/js/pages/register.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+console.log('reg injected');
 
 /***/ }),
 

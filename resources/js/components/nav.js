@@ -1,1 +1,1 @@
-console.log("navjs")
+console.log("navjs injected")
