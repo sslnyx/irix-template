@@ -4,7 +4,7 @@
 ### 1. Clone
 
 - Clone this repo to your local machine using `git clone git@github.com:sslnyx/irix-template.git projectName`
-- Change "projectName" with your desired project name.
+- Change "projectName" to your desired project name.
 
 ### 2. Install Composer Dependencies & NPM Dependencies
 
