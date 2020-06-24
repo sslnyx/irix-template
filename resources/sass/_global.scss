@@ -1,7 +1,5 @@
-body {
-  display: flex;
-  flex-direction: column;
-}
+// body {
+// }
 
 .viewport {
   position: fixed;
@@ -20,4 +18,14 @@ body {
   flex-direction: column;
   width: 100%;
   min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+.content, section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }

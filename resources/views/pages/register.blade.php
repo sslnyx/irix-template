@@ -2,7 +2,9 @@
 
 @section('content')
 
-<h1 class="text-uppercase">{{Route::currentRouteName()}}</h1>
+<section>
+    <h1 class="text-uppercase">{{Route::currentRouteName()}}</h1>
+</section>
 
 
 

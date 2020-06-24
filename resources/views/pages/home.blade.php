@@ -2,8 +2,10 @@
 
 @section('content')
 
-<h1>front page</h1>
+<section>
+    <h1 class="text-uppercase">{{Route::currentRouteName()}}</h1>
+</section>
 
-<a href="/register">register</a>
+
 
 @endsection

@@ -8,6 +8,8 @@
 <body class="viewport{{ $title ? strtolower(' page-'.$title) : null }}">
 
     <div id="scroll-container" class="scroll-container">
+        @include('components.nav')
+
         <main>
             @yield('content')
         </main>
