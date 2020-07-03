@@ -19515,3 +19515,4 @@ module.exports = __webpack_require__(/*! C:\xampp\htdocs\irix-template\resources
 /***/ })
 
 /******/ });
+//# sourceMappingURL=app.js.map
