@@ -18,6 +18,7 @@
 
 
     <script>
+        const data = @json(config('data'));
         const page = "{{ strtolower($title) }}"
     </script>
 

@@ -19405,6 +19405,7 @@ function initMap() {
   exports.map = new google.maps.Map(document.getElementById("map"), mapOptions);
 }
 
+console.log(data);
 window.addEventListener("load", initMap);
 
 /***/ }),
