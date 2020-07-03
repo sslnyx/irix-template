@@ -19287,7 +19287,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // import
 
 var MY_SITE = {
   // you have one namespace-object where you hold all your stuff
-  components: ["nav"],
+  components: ["nav", "map"],
   init_components: function init_components(el) {
     __webpack_require__("./resources/js/components sync recursive ^\\.\\/.*$")("./".concat(el));
   },
@@ -19347,6 +19347,10 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
+	"./map": "./resources/js/components/map.js",
+	"./map.js": "./resources/js/components/map.js",
+	"./mapStyle": "./resources/js/components/mapStyle.json",
+	"./mapStyle.json": "./resources/js/components/mapStyle.json",
 	"./nav": "./resources/js/components/nav.js",
 	"./nav.js": "./resources/js/components/nav.js"
 };
@@ -19370,6 +19374,49 @@ webpackContext.keys = function webpackContextKeys() {
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
 webpackContext.id = "./resources/js/components sync recursive ^\\.\\/.*$";
+
+/***/ }),
+
+/***/ "./resources/js/components/map.js":
+/*!****************************************!*\
+  !*** ./resources/js/components/map.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var myStyle = __webpack_require__(/*! ./mapStyle.json */ "./resources/js/components/mapStyle.json");
+
+var mapOptions = {
+  // How zoomed in you want the map to start at (always required)
+  zoom: 14,
+  disableDefaultUI: true,
+  // The latitude and longitude to center the map (always required)
+  center: {
+    lat: 49.214221000000016,
+    lng: -123.13931100000002
+  },
+  // Nova Geo site
+  // How you would like to style the map.
+  // This is where you would paste any style found on Snazzy Maps.
+  styles: myStyle
+};
+
+function initMap() {
+  exports.map = new google.maps.Map(document.getElementById("map"), mapOptions);
+}
+
+window.addEventListener("load", initMap);
+
+/***/ }),
+
+/***/ "./resources/js/components/mapStyle.json":
+/*!***********************************************!*\
+  !*** ./resources/js/components/mapStyle.json ***!
+  \***********************************************/
+/*! exports provided: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("[{\"featureType\":\"water\",\"elementType\":\"geometry\",\"stylers\":[{\"color\":\"#193341\"}]},{\"featureType\":\"landscape\",\"elementType\":\"geometry\",\"stylers\":[{\"color\":\"#2c5a71\"}]},{\"featureType\":\"road\",\"elementType\":\"geometry\",\"stylers\":[{\"color\":\"#29768a\"},{\"lightness\":-37}]},{\"featureType\":\"poi\",\"elementType\":\"geometry\",\"stylers\":[{\"color\":\"#406d80\"}]},{\"featureType\":\"transit\",\"elementType\":\"geometry\",\"stylers\":[{\"color\":\"#406d80\"}]},{\"elementType\":\"labels.text.stroke\",\"stylers\":[{\"visibility\":\"on\"},{\"color\":\"#3e606f\"},{\"weight\":2},{\"gamma\":0.84}]},{\"elementType\":\"labels.text.fill\",\"stylers\":[{\"color\":\"#ffffff\"}]},{\"featureType\":\"administrative\",\"elementType\":\"geometry\",\"stylers\":[{\"weight\":0.6},{\"color\":\"#1a3541\"}]},{\"elementType\":\"labels.icon\",\"stylers\":[{\"visibility\":\"off\"}]},{\"featureType\":\"poi.park\",\"elementType\":\"geometry\",\"stylers\":[{\"color\":\"#2c5a71\"}]}]");
 
 /***/ }),
 
