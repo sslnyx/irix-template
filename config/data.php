@@ -43,18 +43,22 @@ return [
 
     'form' => [
         'firstName' => [
+            'req' => true,
             'type' => 'text',
             'ph' => 'First Name'
         ],
         'lastName' => [
+            'req' => true,
             'type' => 'text',
             'ph' => 'Last Name'
         ],
         'email' => [
+            'req' => true,
             'type' => 'email',
             'ph' => 'Email'
         ],
         'phone' => [
+            'req' => true,
             'type' => 'phone',
             'ph' => 'Phone'
         ],

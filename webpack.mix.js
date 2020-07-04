@@ -29,6 +29,8 @@ mix
       "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
       "node_modules/animejs/lib/anime.min.js",
       "node_modules/swiper/js/swiper.min.js",
+      "node_modules/cleave.js/dist/cleave.min.js",
+      "node_modules/cleave.js/dist/addons/cleave-phone.ca.js",
       "public/js/app.js",
     ],
     "public/js/all.js"

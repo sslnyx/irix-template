@@ -19491,7 +19491,12 @@ window.addEventListener("load", _components_map__WEBPACK_IMPORTED_MODULE_0__["in
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-console.log('reg injected');
+console.log("reg injected");
+var cleave = new Cleave("[type='phone']", {
+  numericOnly: true,
+  blocks: [0, 3, 3, 4],
+  delimiters: ["(", ") ", "-"]
+});
 
 /***/ }),
 

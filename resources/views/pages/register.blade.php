@@ -6,6 +6,9 @@
     <h1 class="text-uppercase">{{Route::currentRouteName()}}</h1>
 </section>
 
+<section>
+    @include('components.form')
+</section>
 
 
 @endsection
