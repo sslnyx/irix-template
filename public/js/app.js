@@ -19405,8 +19405,7 @@ function initMap() {
   exports.map = new google.maps.Map(document.getElementById("map"), mapOptions);
 }
 
-console.log(data);
-window.addEventListener("load", initMap);
+exports.initMap = initMap;
 
 /***/ }),
 
@@ -19472,10 +19471,16 @@ webpackContext.id = "./resources/js/pages sync recursive ^\\.\\/.*$";
 /*!************************************!*\
   !*** ./resources/js/pages/home.js ***!
   \************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _components_map__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/map */ "./resources/js/components/map.js");
+/* harmony import */ var _components_map__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_components_map__WEBPACK_IMPORTED_MODULE_0__);
 console.log('home injected');
+
+window.addEventListener("load", _components_map__WEBPACK_IMPORTED_MODULE_0__["initMap"]);
 
 /***/ }),
 

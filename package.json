@@ -25,6 +25,7 @@
         "@popperjs/core": "^2.4.4",
         "animejs": "^3.2.0",
         "bootstrap": "^4.5.0",
+        "cleave.js": "^1.6.0",
         "http-proxy": "^1.18.1",
         "jquery": "^3.5.1",
         "normalize.css": "^8.0.1",

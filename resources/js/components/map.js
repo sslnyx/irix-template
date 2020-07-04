@@ -1,4 +1,5 @@
 const myStyle = require("./mapStyle.json");
+
 var mapOptions = {
   // How zoomed in you want the map to start at (always required)
   zoom: 14,
@@ -15,10 +16,9 @@ var mapOptions = {
   styles: myStyle,
 };
 
+
 function initMap() {
   exports.map = new google.maps.Map(document.getElementById("map"), mapOptions);
 }
 
-console.log(data);
-
-window.addEventListener("load", initMap);
+exports.initMap = initMap;
