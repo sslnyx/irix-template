@@ -18,6 +18,7 @@ mix
       "node_modules/normalize.css/normalize.css",
       "node_modules/bootstrap/dist/css/bootstrap.min.css",
       "node_modules/swiper/css/swiper.min.css",
+      "node_modules/spinkit/spinkit.min.css",
       "public/css/app.css",
     ],
     "public/css/all.css"
@@ -32,6 +33,7 @@ mix
       "node_modules/cleave.js/dist/cleave.min.js",
       "node_modules/cleave.js/dist/addons/cleave-phone.ca.js",
       "node_modules/mobile-detect/mobile-detect.min.js",
+      "public/js/vendor/smooth-scroll.js",
       "public/js/app.js",
     ],
     "public/js/all.js"

@@ -31,5 +31,6 @@
     @endforeach
 
     <button type="submit" class="btn btn-primary mb-2">submit</button>
+    <div class="sk-pulse d-none"></div>
 
 </form>

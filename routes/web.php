@@ -20,10 +20,21 @@ Route::get('/', function () {
 $pages = array('thank-you', 'register');
 foreach ($pages as $page) {
     Route::get($page, function () use ($page) {
-        return view("pages.".$page);
+        return view("pages." . $page);
     })->name($page);
 }
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+// Route::get('/simlink', function () {
+//     Artisan::call('storage:link');
+// });
+
+// Route::get('/clear-cache', function () {
+//     Artisan::call('config:cache');
+//     Artisan::call('cache:clear');
+//     Artisan::call('config:clear');
+//     return "Cache is cleared";
+// });
