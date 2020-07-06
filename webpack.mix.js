@@ -31,6 +31,7 @@ mix
       "node_modules/swiper/js/swiper.min.js",
       "node_modules/cleave.js/dist/cleave.min.js",
       "node_modules/cleave.js/dist/addons/cleave-phone.ca.js",
+      "node_modules/mobile-detect/mobile-detect.min.js",
       "public/js/app.js",
     ],
     "public/js/all.js"

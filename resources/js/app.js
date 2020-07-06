@@ -6,7 +6,7 @@ require("./bootstrap");
 const MY_SITE = {
   // you have one namespace-object where you hold all your stuff
 
-  components: ["nav", "map"],
+  components: ["nav", "map","smoothScroll"],
   init_components(el) {
     require(`./components/${el}`);
   },

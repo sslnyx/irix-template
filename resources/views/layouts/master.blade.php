@@ -5,15 +5,17 @@
     @include('components.head')
 </head>
 
-<body class="viewport{{ $title ? strtolower(' page-'.$title) : null }}">
+<body class="{{ $title ? strtolower(' page-'.$title) : null }}">
+    <div class="viewport">
+        <div id="scroll-container" class="scroll-container">
+            @include('components.nav')
 
-    <div id="scroll-container" class="scroll-container">
-        @include('components.nav')
+            <main>
+                @yield('content')
+            </main>
+            @include('components.footer')
+        </div>
 
-        <main>
-            @yield('content')
-        </main>
-        @include('components.footer')
     </div>
 
 
