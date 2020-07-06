@@ -20,7 +20,7 @@
             required @endif>
             <option selected disabled value="">{{$value["ph"]}}</option>
             @foreach ($value["option"] as $option => $option_value)
-            <option value="$option_value">{{$option_value}}</option>
+            <option value="$option_value">{{ $option. " " . $option_value }}</option>
             @endforeach
         </select>
     </div>

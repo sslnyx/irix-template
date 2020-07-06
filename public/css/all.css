@@ -401,6 +401,7 @@ nav ul {
 nav ul li {
   list-style: none;
   margin-right: 1rem;
+  text-transform: uppercase;
 }
 
 .map {
