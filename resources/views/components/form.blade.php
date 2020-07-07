@@ -1,4 +1,4 @@
-<form action="">
+<form id="reg-form" method="POST" action="">
 
     @php
     $formData = config('data.form');
@@ -34,3 +34,10 @@
     <div class="sk-pulse d-none"></div>
 
 </form>
+
+@push('custom-header-scripts')
+<script>
+   const siteKey =  "{{env('RECAPTCHA_SITE_KEY')}}";
+</script>
+<script src="https://www.google.com/recaptcha/api.js?render={{env('RECAPTCHA_SITE_KEY')}}"></script>
+@endpush

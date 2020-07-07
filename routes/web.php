@@ -24,6 +24,9 @@ foreach ($pages as $page) {
     })->name($page);
 }
 
+Route::post('/registrants/new', 'RegistrantController@store')->name('newRegistrant');
+
+
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
