@@ -6,7 +6,6 @@
     <h1 class="text-uppercase">{{Route::currentRouteName()}}</h1>
 </section>
 
-
 <section>
     <div id="map" class="map"></div>
 </section>

@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Registrant;
 
+// use App\Mail\NewRegistrant;
+// use Illuminate\Support\Facades\Mail;
+
 class RegistrantController extends Controller
 {
     /**

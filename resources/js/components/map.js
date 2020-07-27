@@ -1,6 +1,9 @@
 const myStyle = require("./mapStyle.json");
+const mapData = require("./mapData.json");
+let markers = [];
+let map;
 
-var mapOptions = {
+const mapOptions = {
   // How zoomed in you want the map to start at (always required)
   zoom: 14,
   disableDefaultUI: true,
@@ -16,9 +19,52 @@ var mapOptions = {
   styles: myStyle,
 };
 
-
 function initMap() {
-  exports.map = new google.maps.Map(document.getElementById("map"), mapOptions);
+  map = new google.maps.Map(document.getElementById("map"), mapOptions);
+  var siteMarker = new google.maps.Marker({
+    position: mapOptions.center,
+    map: map
+  });
+
+  // To add the marker to the map, call setMap();
+  // siteMarker.setMap(map);
+
+  Object.keys(mapData).forEach((key) => {
+    Object.values(mapData[key]).forEach((element, i) => {
+      addMarkerWithTimeout(element, i * 200);
+    });
+  });
+}
+
+function drop() {
+  clearMarkers();
+
+  myData.forEach((element) => {});
+
+  // for (let i = 0; i < neighborhoods.length; i++) {
+  //   addMarkerWithTimeout(neighborhoods[i], i * 200);
+  // }
+}
+
+function addMarkerWithTimeout(position, timeout) {
+  window.setTimeout(() => {
+    console.log(position);
+    markers.push(
+      new google.maps.Marker({
+        position: position,
+        map,
+        animation: google.maps.Animation.DROP,
+      })
+    );
+  }, timeout);
+}
+
+function clearMarkers() {
+  console.log(markers.length);
+  for (let i = 0; i < markers.length; i++) {
+    markers[i].setMap(null);
+  }
+  markers = [];
 }
 
 exports.initMap = initMap;

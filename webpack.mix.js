@@ -1,4 +1,6 @@
 const mix = require("laravel-mix");
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
+  .BundleAnalyzerPlugin;
 
 /*
  |--------------------------------------------------------------------------
@@ -11,6 +13,9 @@ const mix = require("laravel-mix");
  |
  */
 mix
+  // .webpackConfig({
+  //   plugins: [new BundleAnalyzerPlugin()],
+  // })
   .js("resources/js/app.js", "public/js")
   .sass("resources/sass/app.scss", "public/css")
   .styles(
@@ -33,6 +38,7 @@ mix
       "node_modules/cleave.js/dist/cleave.min.js",
       "node_modules/cleave.js/dist/addons/cleave-phone.ca.js",
       "node_modules/mobile-detect/mobile-detect.min.js",
+      "node_modules/lazysizes/lazysizes.min.js",
       "public/js/vendor/smooth-scroll.js",
       "public/js/app.js",
     ],
