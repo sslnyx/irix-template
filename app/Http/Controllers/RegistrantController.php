@@ -49,12 +49,11 @@ class RegistrantController extends Controller
 
         if ($response->getScore() < 0.5) {
             return response()->json("error!");
+        } else{
+            Registrant::create($request->all());
+            return response()->json("score:" . $response->getScore());    
         }
 
-
-        Registrant::create($request->all());
-
-        return response()->json("score:" . $response->getScore());
 
         // Mail::to(explode(',', env('MAIL_RECIPIENT')))->send(new NewRegistrant($request));
         // return response()->json($request);
